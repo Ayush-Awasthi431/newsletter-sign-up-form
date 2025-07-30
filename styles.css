@@ -1,0 +1,219 @@
+:root{
+    --red-color: hsl(4, 100%, 67%);
+    --blue-color: hsl(234, 29%, 20%);
+    --white-color: white;
+    --button-shadow: hsla(4, 100%, 67%,0.6);
+    --input-background-color: hsl(4, 100%, 90%);
+    --input-border: #ccc;
+}
+@font-face {
+    font-family: "roboto";
+    src: url(./assets/fonts/Roboto-Regular.ttf) format("truetype");
+    font-weight: normal; 
+}
+@font-face {
+    font-family: "roboto";
+    src: url(./assets/fonts/Roboto-Bold.ttf) format("truetype");
+    font-weight: bold; 
+}
+* , ::before , ::after{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    margin: 0;
+    line-height: 1.5;
+    font-family: "roboto";
+}
+.sign-up{
+    width: 100vw;
+}
+.sign-up>figure{
+    margin: 0;
+}
+picture img{
+    width: 100%;
+    height: 13rem;
+    object-fit: cover;
+}
+.form-content , form , .success{
+    padding: 1.2rem;
+}
+.form-content>h1{
+    font-size: 2rem;
+    margin-block: 0;
+}
+.form-content>p{
+    margin-block: 0.5rem;
+}
+ul{
+    padding: 0;
+    list-style: none;
+}
+ul>li{
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+}
+ul>li::before{
+    content: url("./assets/images/icon-list.svg");
+    display: inline-block;
+    margin: 0.1rem;
+}
+form{
+    padding-top: 0;
+}
+form>div{
+    display: flex;
+    justify-content: space-between;
+}
+form>div>label , form>div>span{
+    font-size: 0.7rem;
+    font-weight: bold;
+    display: block;
+}
+#error-msg{
+    color: var(--red-color);
+}
+#email{
+    width: 100%;
+    height: 3rem;
+    border: 1px solid var(--input-border);
+    border-radius: 0.8rem;
+    font-size: 1rem;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+#email:hover,#sub-btn:hover{
+    cursor: pointer;
+}
+#sub-btn:hover{
+    background-color: var(--red-color);
+    box-shadow: 0 5px 6px var(--button-shadow);
+}
+#sub-btn , #dismiss-btn{
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+}
+.hidden{
+    display: none !important;
+}
+.input-error {
+  box-shadow: 0 0 0 1000px var(--input-background-color) inset;
+  border: 1px solid var(--red-color) !important;
+}
+.input-error:focus {
+  border: 1px solid var(--red-color) !important;
+  outline: none;
+}
+/*Success Page*/
+.success{
+    height: 90vh;
+}
+.success>figure{
+    margin: 0;
+    margin-top: 3rem;
+}
+.success > h1{
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+.success>p{
+    font-size: 0.9rem
+}
+#success-msg{
+    font-weight: bold;
+    font-size: 1rem;
+}
+#dismiss-btn{
+    margin-top: 14rem;
+}
+
+@media(min-width: 700px){
+    body{
+        background-color: var(--blue-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .sign-up{
+        width: 40rem;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .sign-up , .success{
+        background-color: var(--white-color);
+        border-radius: 1.2rem;
+    }
+    figure{
+        grid-column: 2 / 3;
+        grid-row: 1 / 4;
+        padding: 1rem;
+    }
+    picture img{
+        height: 100%;
+        border-radius: 0.4rem;
+    }
+    .form-content{
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        padding-top: 2rem;
+    }
+    .form-content>h1{
+        font-size: 2.4rem;
+    }
+    form{
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    /*SUCCESS Page*/
+    .success{
+        width: 23rem;
+        padding: 3rem;
+        height: auto;
+    }
+    .success>figure{
+        margin: 0;
+        padding: 0;
+    }
+    .success>figure>img{
+        width: 2.5rem;
+    }
+    .success>h1{
+        margin-top: 1rem;
+        line-height: normal;
+        font-size: 2.3rem;
+    }
+    .success>p{
+        font-size: 0.8rem;
+        margin-block: 1rem;
+    }
+    #dismiss-btn{
+        margin-top: auto;
+        border-radius: 0.5rem;
+    }
+    #dismiss-btn:hover{
+    background-color: var(--red-color);
+    box-shadow: 0 5px 6px var(--button-shadow);
+}
+    footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    .attribution{
+        color: white;
+    }
+    .attribution a{
+        color: hsl(228, 74%, 89%);
+    }
+}
